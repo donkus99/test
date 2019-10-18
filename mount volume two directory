@@ -1,0 +1,26 @@
+# fdisk -l
+
+# fdisk /dev/xvdc
+# fdisk /dev/xvdd
+
+# pvcreate /dev/xvdc1
+# pvcreate /dev/xvdd1
+
+# vgcreate testvg /dev/xvdc1 /dev/xvdd1
+
+# vgdisplay
+OR
+# vgdisplay testvg
+
+# lvcreate -n lv_data1 --size 12G testvg
+# lvcreate -n lv_data2 --size 14G testvg
+
+# lvdisplay
+OR
+# lvdisplay testvg
+
+# mkfs.ext4 /dev/testvg/lv_data1
+# mkfs.ext4/dev/testvg/lv_data2
+
+# mount /dev/testvg/lv_data1 /data1
+# mount /dev/testvg/lv_data2 /data2
